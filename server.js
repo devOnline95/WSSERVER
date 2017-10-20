@@ -4,11 +4,12 @@ var io = require('socket.io')(server);
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
+console.log("Server is working PORT=[ "+port+" ] !!!");
 server.listen(port);
 
 app.use(function (req, res, next) {
-	console.log("=> Using this server !!!");
-   
+	
+   console.log("New Request Income !!!");
     var origin = req.headers.origin;  if(origin == undefined){ return next(); }
 	console.log('"NEW CLIENT FROM : '+origin);
 
